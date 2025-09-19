@@ -25,7 +25,7 @@ function App() {
         <button
           ref={popoverButtonRef}
           onClick={() => setIsPopoverOpen(v => !v)}
-          aria-expanded={isPopoverOpen ? 'true' : 'false'}
+          aria-expanded={isPopoverOpen}
           aria-controls="demo-popover"
         >
           Alternar Popover
