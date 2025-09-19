@@ -1,0 +1,103 @@
+.overlay-backdrop {
+  position: fixed;
+  inset: 0;
+  background: var(--overlay-scrim);
+  z-index: calc(var(--z-modal) - 1);
+  animation: fade-in var(--duration) ease;
+}
+
+.overlay-center {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  z-index: var(--z-modal);
+  outline: none;
+}
+
+.modal-surface {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-3);
+  width: min(92vw, 560px);
+  transform: translateY(4px);
+  animation: pop-in var(--duration) ease;
+}
+
+.modal-content {
+  padding: 20px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.no-margin-top { margin-top: 0; }
+
+.popover {
+  position: absolute;
+  z-index: var(--z-popover);
+  top: var(--pop-top, 0);
+  left: var(--pop-left, 0);
+}
+
+.tooltip {
+  position: absolute;
+  transform: translateX(-50%);
+  background: #111;
+  color: #fff;
+  font-size: 12px;
+  line-height: 1;
+  padding: 6px 8px;
+  border-radius: 6px;
+  z-index: var(--z-tooltip);
+  box-shadow: var(--shadow-2);
+  top: var(--tt-top, 0);
+  left: var(--tt-left, 0);
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pop-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .overlay-backdrop,
+  .modal-surface { animation: none; transform: none; }
+}
+
+.toast-region {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: var(--z-toast);
+}
+
+.toast {
+  background: #222;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px 12px;
+  box-shadow: var(--shadow-2);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.toast button {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}

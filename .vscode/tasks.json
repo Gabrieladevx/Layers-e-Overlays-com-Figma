@@ -1,0 +1,25 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Scaffold Vite React TS",
+			"type": "shell",
+			"command": "npx create-vite@latest . --template react-ts",
+			"args": [],
+			"problemMatcher": [
+				"$tsc"
+			],
+			"group": "build"
+		},
+		{
+			"label": "Scaffold Vite React TS (subfolder)",
+			"type": "shell",
+			"command": "npx create-vite@latest overlays-demo --template react-ts",
+			"args": [],
+			"problemMatcher": [
+				"$tsc"
+			],
+			"group": "build"
+		}
+	]
+}
